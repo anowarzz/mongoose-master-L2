@@ -1,13 +1,17 @@
 import httpStatus from 'http-status';
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { UserServices } from './user.services';
 import sendResponse from '../../utils/sendResponse';
 
+
+
+
+
 // Creating a Student Profile
-const createStudent = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
+const createStudent : RequestHandler = async (
+  req,
+  res,
+  next
 ) => {
   try {
     // receiving and validating request data
